@@ -1,23 +1,23 @@
-import logo from './logo.svg';
+
 import './App.css';
+import Filters from './components/Filters';
+import Navbar from './components/Navbar';
+import Offers from './components/Offers';
+import Resturants from './components/Resturants';
+import userInfo from "./data/userInfo"
+import offers from './data/Offers';
+import restaurents from './data/restaurents';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+    <Navbar {...userInfo.location}/>
+    <Offers offers={offers}/>
+   <section class="near-you">
+    <Filters/>
+    <Resturants resturants={restaurents}/>
+    
+    </section>
     </div>
   );
 }
